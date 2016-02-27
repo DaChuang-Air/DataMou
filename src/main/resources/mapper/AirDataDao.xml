@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.luoliyong.dc.dao.AirDataDao">
+
+       <resultMap type="com.luoliyong.dc.model.AirInfo" id="airinfo">
+              <id property="id" column="id"/>
+              <result property="date" column="create_time"/>
+              <result property="info" column="air_info"/>
+              <result property="aqi" column="aqi"/>
+       </resultMap>
+
+    <sql id="Base_Column_List">id,create_time,air_info,aqi</sql>
+    <select id="findbyid" resultMap="airinfo">
+        select <include refid="Base_Column_List"/> from history_data where id = #{id}
+    </select>
+       <insert id="insert" parameterType="com.luoliyong.dc.model.AirInfo">
+       insert into history_data(
+      create_time, air_info, aqi)
+       values
+       (
+       #{date},
+       #{info},
+       #{aqi})
+       </insert>
+
+</mapper> 
