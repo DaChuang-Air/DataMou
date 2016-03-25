@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 import java.util.Date;
 
 /**
- * Created by Á¢ÓÂ on 2016/2/24.
+ * Created by ï¿½ï¿½ï¿½ï¿½ on 2016/2/24.
  */
 @Component
 public class ScheduledHandler {
@@ -40,7 +40,7 @@ public class ScheduledHandler {
 
             logger.info("Insert success");
         } catch (Exception e) {
-            logger.error("ÏµÍ³Òì³£", e);
+            logger.error("", e);
         }
     }
 }

@@ -7,4 +7,6 @@ import org.springframework.stereotype.Component;
 
 
 public interface UserDao {
+    User findOne(String id);
+    void insert(User user);
 }
